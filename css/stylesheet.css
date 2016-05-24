@@ -1,0 +1,233 @@
+body{
+	background-color:#eff5f5;
+}
+h1{
+	display: inline;
+	margin-left: 40px;
+	color: #758a81;
+}
+h4{
+	margin-left: 40px;
+	color: #5d6e67;
+}
+p{
+	margin-left: 40px;
+	font-size: 20px;
+}
+h3{
+	display: inline;
+	margin-left: 5px;
+	color: #90a19a;
+}
+.dropbtn {
+    background-color: #34b3a0;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+	border-radius: 8px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+	float: right;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	right: 0;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #34b3a0;
+}
+
+/*region*/
+.region{
+	clear: both;
+}
+#north{
+	background-color: white;
+	text-align: center;
+	font-size: 21px;
+	padding-top: 100px;
+	width: 287.983px;
+	height: 356px;
+	float: left;
+	margin-top: 20px;
+	margin-right: 35px;
+	margin-left: 200px;
+}
+#north:hover{
+	background-color: #34b3a0;
+}
+#east{
+	background-color: white;
+	text-align: center;
+	font-size: 21px;
+	padding-top: 100px;
+	width: 287.983px;
+	height: 356px;
+	float: left;
+	margin-top: 20px;
+	margin-right: 35px;
+}
+#east:hover{
+	background-color: #34b3a0;
+}
+#northeast{
+	background-color: white;
+	text-align: center;
+	font-size: 21px;
+	padding-top: 100px;
+	width: 287.983px;
+	height: 356px;
+	float: left;
+	margin-top: 20px;
+	margin-right: 125px;
+}
+#northeast:hover{
+	background-color: #34b3a0;
+}
+#central{
+	background-color: white;
+	text-align: center;
+	font-size: 21px;
+	padding-top: 100px;
+	width: 287.983px;
+	height: 356px;
+	float: left;
+	margin-top: 20px;
+	margin-right: 35px;
+	margin-left: 341.4915px;
+	margin-bottom: 40px;
+}
+#central:hover{
+	background-color: #34b3a0;
+}
+#west{
+	background-color: white;
+	text-align: center;
+	font-size: 21px;
+	padding-top: 100px;
+	width: 287.983px;
+	height: 356px;
+	float: left;
+	margin-top: 20px;
+	margin-right: 341.4915px;
+	margin-bottom: 40px;
+}
+#west:hover{
+	background-color: #34b3a0;
+}
+a{
+	color: black;
+	text-decoration: none;
+}
+.change:hover{
+	color: white;
+}
+img{
+	border-radius:50%;
+	height: 150px;
+	width: 150px;
+}
+
+/*clinics*/
+.clinics{
+	background-color: white;
+	clear: both;
+	margin-top: 20px;
+	padding-bottom: 16px;
+	padding-top: 16px;
+}
+.specific{
+	font-size: 18px;
+	padding-left: 10px;
+}
+.specific:hover{
+	color: #794ca6;
+	cursor:pointer;
+}
+#last{
+	margin-bottom: 20px;
+}
+.credits{
+	font-size: 12px;
+}
+.more_info{
+	font-size: 16px;
+}
+#open_close{
+	margin-top:20px;
+	font-weight: bold;
+}
+@media only screen and (max-width : 320px){
+	.dropdown{
+		float: right;
+		position: relative;
+		margin-bottom: 20px;
+	}
+	#north{
+		clear: both;
+		margin-top: 20px;
+		margin-right: 0;
+		margin-left: 0px;
+	}
+	#east{
+		clear: both;
+		margin-top: 20px;
+		margin-right: 0;
+		margin-left: 0px;
+	}
+	#northeast{
+		clear: both;
+		margin-top: 20px;
+		margin-right: 0;
+		margin-left: 0px;
+	}
+	#central{
+		clear: both;
+		margin-top: 20px;
+		margin-right: 0;
+		margin-left: 0px;
+	}
+	#west{
+		clear: both;
+		margin-right: 0;
+		margin-top: -17px;
+		margin-left: 0px;
+	}
+	h3{
+		display: block;
+		margin-left: 40px;
+	}
+	#change_position{
+		clear: both;
+	}
+}

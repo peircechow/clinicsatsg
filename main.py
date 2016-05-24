@@ -1,0 +1,164 @@
+#!/usr/bin/env python
+#
+# Copyright 2007 Google Inc.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+import os
+from google.appengine.api import users
+from google.appengine.ext import ndb
+import jinja2
+import webapp2
+import cgi
+import datetime
+import calendar
+import re
+JINJA_ENVIRONMENT = jinja2.Environment(
+    loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
+    extensions=['jinja2.ext.autoescape'],
+    autoescape=True)
+	
+#class Clinic(ndb.Model):
+#	#fields with multiple values will be split into array
+#	location = ndb.StrngProperty(indexed=False)
+#	name = ndb.StrngProperty(indexed=False)
+#	address = ndb.StringProperty(indexed=False)
+#	telephone = ndb.StringProperty(indexed=False)
+#	weekday_open = ndb.StringProperty(indexed=False)
+#	weekday_exception = ndb.StringProperty(indexed=False)
+#	weekend_open = ndb.StringProperty(indexed=False)
+#	days_closed = ndb.StringProperty(indexed=False)
+#	public_close = ndb.StringProperty(indexed=False)
+#	lastline = ndb.StringProperty(indexed=False)
+	
+#def Clinic_Key():
+#	return ndb.Key("Clinic",1)
+	
+
+
+class MainHandler(webapp2.RequestHandler): #home page
+	def get(self):
+		template_values = {}
+		template = JINJA_ENVIRONMENT.get_template('home.html') #change the file to the relevant html file
+		self.response.write(template.render(template_values))
+
+class About(webapp2.RequestHandler):
+	def get(self):
+		template_values = {}
+		template = JINJA_ENVIRONMENT.get_template('about.html') #change the file to the relevant html file
+		self.response.write(template.render(template_values))
+
+class Health_tips(webapp2.RequestHandler):
+	def get(self):
+		template_values = {}
+		template = JINJA_ENVIRONMENT.get_template('health_tips.html') #change the file to the relevant html file
+		self.response.write(template.render(template_values))
+
+class North(webapp2.RequestHandler):
+	def get(self):
+		template_values = {}
+		template = JINJA_ENVIRONMENT.get_template('north.html') #change the file to the relevant html file
+		self.response.write(template.render(template_values))
+
+		
+class Northeast(webapp2.RequestHandler):
+	def get(self):
+		template_values = {}
+		template = JINJA_ENVIRONMENT.get_template('northeast.html') #change the file to the relevant html file
+		self.response.write(template.render(template_values))
+		
+class East(webapp2.RequestHandler):
+	def get(self):
+		template_values = {}
+		template = JINJA_ENVIRONMENT.get_template('east.html') #change the file to the relevant html file
+		self.response.write(template.render(template_values))
+		
+class Central(webapp2.RequestHandler):
+	def get(self):
+		template_values = {}
+		template = JINJA_ENVIRONMENT.get_template('central.html') #change the file to the relevant html file
+		self.response.write(template.render(template_values))
+		
+class West(webapp2.RequestHandler):	
+	def get(self):
+		template_values = {}
+		template = JINJA_ENVIRONMENT.get_template('west.html') #change the file to the relevant html file
+		self.response.write(template.render(template_values))
+		
+class Open_close(webapp2.RequestHandler):
+
+	def get(self):
+		#my_date = date.today()
+		#now = datetime.datetime.now()
+		#curr_day= calandar.day_name[datetime.date.today().weekday()] #may be wrong
+		#curr_hour = now.hour
+		#curr_min = now.minute
+		#curr_time = int(str(curr_hour)+str(curr_min))
+		
+		#o_data=[]
+		#c_data=[]
+		
+		
+		##query for location
+		#location = self.request.get("location")
+		#clinic_query = Clinic.query().filter(Clinic.location==location)
+		#clinics=clinic_query.fetch() # get back in list
+		
+		#for i in clinics:
+		#	o_timings=[]# append in 24 hour format
+		#	c_timings=[]
+		#	days_closed = clinics[i].days_closed.split(';')		
+			#from location check if current_day=days_closed or current_day
+		#	if days_closed.find(curr_day)!=-1:
+		#		c_data.append(clinics[i]) #details of that particular clinic gets appended to data
+				#if closed then append to c_data
+		#	else:
+		#	#else query for timing based on day ,using str.split to split into timings into array
+		#		if curr_day = 'Saturday' or curr_day = 'Sunday':
+		#			timing = clinincs[i].weekend_open.replace('-',';')
+		#			timings = timing.split(';')
+		#			for t in range(len(timings)):
+					#1st element in arr append to o_timings, second to c_timings
+		#				if t%2==1:
+		#					o_timings.append(int(timings[t])
+		#				else:
+		#					c_timings.append(int(timings[t])
+		#					
+		#		else:
+		#			timing = clinincs[i].weekday_open.replace('-',';')
+		#			timings = timing.split(';')
+		#			for t in range(len(timings)):
+		#				if t%2==1:
+		#					o_timings.append(int(timings[t])
+		#				else:
+		#					c_timings.append(int(timings[t])
+							
+		#	for index in range(len(o_timings)):
+		#		if o_timings[index]<=curr_time<=c_timings[index]:
+		#			o_data.append(clinics[i])
+		#			break
+		template_values = {}
+		template = JINJA_ENVIRONMENT.get_template('open_close.html') #change the file to the relevant html file
+		self.response.write(template.render(template_values))
+
+app = webapp2.WSGIApplication([
+    ('/', MainHandler),
+	('/about', About),
+	('/health_tips', Health_tips),
+	('/north', North),
+	('/northeast', Northeast),
+	('/east', East),
+	('/central', Central),
+	('/west', West),
+	('/open_close', Open_close)
+], debug=True)
