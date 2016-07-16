@@ -187,7 +187,7 @@ img{
 	margin-top:20px;
 	font-weight: bold;
 }
-@media only screen and (max-width : 320px){
+@media screen and (max-width : 650px){
 	.dropdown{
 		float: right;
 		position: relative;
@@ -197,31 +197,31 @@ img{
 		clear: both;
 		margin-top: 20px;
 		margin-right: 0;
-		margin-left: 0px;
+		margin-left: 30px;
 	}
 	#east{
 		clear: both;
 		margin-top: 20px;
 		margin-right: 0;
-		margin-left: 0px;
+		margin-left: 30px;
 	}
 	#northeast{
 		clear: both;
 		margin-top: 20px;
 		margin-right: 0;
-		margin-left: 0px;
+		margin-left: 30px;
 	}
 	#central{
 		clear: both;
 		margin-top: 20px;
 		margin-right: 0;
-		margin-left: 0px;
+		margin-left: 30px;
 	}
 	#west{
 		clear: both;
 		margin-right: 0;
 		margin-top: -17px;
-		margin-left: 0px;
+		margin-left: 30px;
 	}
 	h3{
 		display: block;
